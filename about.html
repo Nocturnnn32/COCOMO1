@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COCOMO1</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="css/templatemo-diagoona.css" rel="stylesheet" />
+    <!--
+
+TemplateMo 550 Diagoona
+
+https://templatemo.com/tm-550-diagoona
+
+-->
+</head>
+
+<body>
+    <div class="tm-container">
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-col-left">
+                        <div class="tm-site-header media">
+                            <img src="img/ingSistemas.ico" alt="Logo" class="mt-1 tm-logo"
+                                style="width: 70px; height: 70px;">
+                            <div class="media-body">
+                                <h1 class="tm-sitename text-uppercase">METRICAS DE MEDICION DE SOFTWARE</h1>
+                                <p class="tm-slogon">Ingeniería de Sistemas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="about.html">Cocomo I <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right">
+                    <section class="tm-content tm-about">
+                        <h2 class="mb-5 tm-content-title">CALCULADORA COCOMO I</h2>
+                        <hr class="mb-4">
+                        <div class="media my-3">
+                            <div class="content">
+                                <div class="content_1">
+
+                                    <form class="form">
+                                        <h3 style="text-align: center;">Ingrese los Datos:</h3>
+                                        <label for="linesOfCode">Flujos de Entrada</label>
+                                        <input type="text" name="linesOfCode" id="linesOfCode1" required>
+                                        <br>
+                                        <label for="linesOfCode">Flujos de Salida</label>
+                                        <input type="text" name="linesOfCode" id="linesOfCode2" required>
+                                        <br>
+                                        <label for="linesOfCode">Sueldo (Bs)</label>
+                                        <input type="text" name="linesOfCode" id="linesOfCode3" required>
+                                        <br><br>
+                                        <h3>Parametros:</h3>
+                                        <hr >
+                                        
+                                        <div class="radio-container">
+                                            
+
+                                            <input type="radio" id="projectType1" name="project" value="Organic"
+                                                checked>
+                                            <label for="projectType1">Orgánico 50 - 80 </label>
+
+                                            <input type="range" min="50" max="80" value="50" class="barra" id="barra1">
+                                            <label for="barra1"><span id="valor1">50</span></label>
+                                            <br><hr >
+
+                                            <input type="radio" id="projectType2" name="project" value="Semidetached">
+                                            <label for="projectType2">SemiAcoplado 81-100</label>
+
+
+                                            <input type="range" min="81" max="100" value="81" class="barra" id="barra2">
+                                            <label for="barra2"><span id="valor2">81</span></label>
+                                            <br><hr >
+
+                                            <input type="radio" id="projectType3" name="project" value="Embedded">
+                                            <label for="projectType3">Acoplado 101-150</label>
+
+                                            <input type="range" min="101" max="150" value="101" class="barra"
+                                                id="barra3">
+                                            <label for="barra3"><span id="valor3">101</span></label>
+                                            <br><hr>
+                                        </div>
+
+                                    </form>
+                                    <button type="button" onclick="start()">Calcular</button>
+                                </div>
+                                
+                                <div class="content_2">
+                                    <div class="p_result"></div>
+                                    <div class="cos_result"></div>
+                                </div>
+
+
+
+                                <br>
+
+                                <div class="content_2">
+
+                                    <div class="size">
+                                        Cantidad de Lineas de codigo(LDC):
+                                        <div class="size_result"></div>
+                                    </div>
+                                    <div class="mldc">
+                                        Codigo en Mil LDC:
+                                        <div class="mldc_result"></div>
+                                    </div>
+                                    <div class="effort">
+                                        Esfuerzo Nominal (Ei):
+                                        <div class="efforts_result"></div>
+                                    </div>
+                                    <div class="timeToDevelop">
+                                        Tiempo de desarrollo (Td):
+                                        <div class="timeToDevelop_result"></div>
+                                    </div>
+                                    <div class="productivity">
+                                        Estimacion de Productividad (P):
+                                        <div class="productivity_result"></div>
+                                    </div>
+                                    <div class="personsToDevelop">
+                                        Número de desarrolladores requeridos (PN):
+                                        <div class="personsToDevelop_result"></div>
+                                    </div>
+
+                                    <div class="cost">
+                                        Costo del proyecto (Bs):
+                                        <div class="cost_result"></div>
+                                    </div>
+                                    <div class="cost_per_line">
+                                        Costo por línea de código (Bs):
+                                        <div class="cost_per_line_result"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <div class="tm-row">
+            <div class="tm-col-left text-center">
+                <ul class="tm-bg-controls-wrapper">
+                    <li class="tm-bg-control active" data-id="0"></li>
+                    <li class="tm-bg-control" data-id="1"></li>
+                    <li class="tm-bg-control" data-id="2"></li>
+                </ul>
+            </div>
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    <p class="mb-0">Copyright 2024 R.C.C.
+
+                        | Design: <a rel="nofollow" target="_parent" href="contact.html"
+                            class="tm-text-link">RubenCos</a></p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+    <script src='js/script.js'></script>
+    <script src="js/scriptt.js"></script>
+</body>
+
+</html>
